@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="en_US">
+    <label index="General.Language.Locale">en_US.UTF-8</label>
+    <label index="General.Language.Name">English</label>
+    <label index="General.Language.Translator">MongoUI</label>
+    <label index="General.Language.OriginalName">English</label>
+    <label index="General.Language.NotFoundException">Language file %s not found.</label>
+    <label index="General.Yes">Yes</label>
+    <label index="General.No">No</label>
+    <label index="General.Cancel">Cancel</label>
+    <label index="General.Date">Date</label>
+    <label index="General.Save">Save</label>
+    <label index="General.Edit">Edit</label>
+    <label index="General.Delete">Delete</label>
+    <label index="General.Create">Create</label>
+    <label index="General.Version">Version</label>
+</language>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="de_DE">
+    <label index="General.Language.Locale">de_DE.UTF-8</label>
+    <label index="General.Language.Name">German</label>
+    <label index="General.Language.Translator">MongoUI</label>
+    <label index="General.Language.OriginalName">Deutsch</label>
+    <label index="General.Yes">Ja</label>
+    <label index="General.No">Nein</label>
+    <label index="General.Cancel">Abbrechen</label>
+    <label index="General.Date">Datum</label>
+    <label index="General.Save">Speichern</label>
+    <label index="General.Edit">Bearbeiten</label>
+    <label index="General.Create">Erstellen</label>
+    <label index="General.Version">Version</label>
+</language>
