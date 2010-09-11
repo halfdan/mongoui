@@ -1,29 +1,23 @@
 <?php
+/**
+ * Copyright (C) 2010  Fabian Becker
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 error_reporting(E_ALL);
 ini_set('display_errors', 0);
-
-function shutdown() {
-    $isError = false;
-    if ($error = error_get_last()) {
-        switch ($error['type']) {
-            case E_ERROR:
-            case E_CORE_ERROR:
-            case E_COMPILE_ERROR:
-            case E_USER_ERROR:
-                $isError = true;
-                break;
-        }
-    }
-
-    if ($isError) {
-        echo "Script execution halted ({$error['message']})";
-    } else {
-        echo "Script completed";
-    }
-}
-
-register_shutdown_function('shutdown');
 
 define('MONGOUI_ROOT', __DIR__ == '/' ? '' : __DIR__);
 

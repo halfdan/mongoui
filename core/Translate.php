@@ -1,5 +1,20 @@
 <?php
-
+/**
+ * Copyright (C) 2010  Fabian Becker
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 namespace MongoUI\Core;
 
 class Translate {
@@ -50,6 +65,37 @@ class Translate {
             return $string;
         }
         return vsprintf($string, $args);
+    }
+
+    /**
+     * @return string the language filename prefix, eg 'en_US' for english
+     * @throws exception if the language set is not a valid filename
+     */
+    public function getLanguageToLoad() {
+        static $language = null;
+        if (!is_null($language)) {
+            return $language;
+        }
+
+        $language = MongoUI\Core\Common::getRequestVar('lang', is_null($language) ? '' : $language, 'string');
+        if (empty($language)) {
+            $language = self::DEFAULT_LANG;
+        }
+        if ($this->isValidLanguage($language)) {
+            return $language;
+        } else {
+            throw new Exception("The language selected ('$language') is not a valid language file ");
+        }
+    }
+
+    /**
+     * Returns whether a language exists.
+     *
+     * @return boolean if the language exists or not
+     * @param string $code
+     */
+    public function isValidLanguage($code) {
+        return file_exists(MONGOUI_ROOT . '/lang/' . $code . '.xml');
     }
 
     private function loadLanguageFromXML($language) {
