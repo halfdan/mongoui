@@ -63,10 +63,11 @@ class Loader
 		$classPath = self::getClassFileName($class);
 
 		if(file_exists($classPath.'.php')) {
-			require_once MONGOUI_ROOT . DIRECTORY_SEPARATOR . $classPath . '.php';
+			$file = MONGOUI_ROOT . DIRECTORY_SEPARATOR . $classPath . '.php';
+                        require_once $file;
 		}
 		else {
-			throw new \Exception('Class {$class} not found!');
+			//throw new \Exception('Class {$class} not found!');
 		}
 	}
 

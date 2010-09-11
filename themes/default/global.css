@@ -1,0 +1,22 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}table,caption,tbody,tfoot,thead,tr,th,td{}:focus{outline:0}body{line-height:1;color:black;background:white}ol,ul{list-style:none}table{border-collapse:separate;border-spacing:0}caption,th,td{text-align:left;font-weight:normal}
+td{vertical-align:top}
+blockquote:before,blockquote:after,q:before,q:after{content:""}
+blockquote,q{quotes:""""}
+a{outline:0}
+strong{font-weight:bold}em{font-style:italic}
+.clearfix:after{ content:"."; display:block; height:0; clear:both; visibility:hidden}
+.clearfix{ display:inline-block}
+.clearfix{ display:block}
+* html .clearfix{ height:1px}.hide{display:none}
+.small{color:#888;font-size:9px}
+img.left{float:left}
+img.right{float:right}
+body{color:#333;font:12px Arial,Verdana,sans-serif;line-height:18px}
+table{font-size:inherit;font:100%}
+select,input,textarea{font:99% Arial,Verdana,sans-serif}pre,code{font:100% monospace;*font-size:100%}
+p,ul,ol{margin:18px 0}
+ul{list-style-type:square;margin-left:2em}
+h1{font-size:18px;line-height:36px;margin:18px 0}
+h2{font-size:14px;line-height:18px;margin:18px 0}
+h3{font-size:12px;line-height:18px;margin:18px 0}
+h4{font-size:12px}

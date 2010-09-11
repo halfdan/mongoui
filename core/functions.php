@@ -20,5 +20,5 @@
 
 function Translate($string, $args = array())
 {
-        return MongoUI\Core\Translate::getInstance()->getTranslation($string, $args);
+        return \MongoUI\Core\Translate::getInstance()->getTranslation($string, $args);
 }

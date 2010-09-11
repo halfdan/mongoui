@@ -15,16 +15,14 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+namespace MongoUI\Modules;
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+class Login extends \MongoUI\Core\Controller {
 
-define('MONGOUI_ROOT', __DIR__ == '/' ? '' : __DIR__);
-
-require_once 'core/Loader.php';
-require_once 'core/functions.php';
-
-$controller = MongoUI\Core\FrontController::getInstance();
-$controller->init();
-$controller->dispatch();
-
+    public function index() {
+        $template = new \MongoUI\Core\Template();
+        $template->setTemplate('index.tpl');
+        $this->renderTemplate($template);
+    }
+}
+?>

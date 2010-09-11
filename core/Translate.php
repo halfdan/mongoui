@@ -38,6 +38,9 @@ class Translate {
     }
 
     public function loadLanguage($language) {
+        // Default language is already loaded.
+        if(self::DEFAULT_LANG == $language)
+            return;
         $translation = $this->loadLanguageFromXML($language);
         $this->mergeTranslationArray($translation);
         $this->setLocale();
@@ -77,7 +80,7 @@ class Translate {
             return $language;
         }
 
-        $language = MongoUI\Core\Common::getRequestVar('lang', is_null($language) ? '' : $language, 'string');
+        $language = \MongoUI\Core\Common::getRequestVar('lang', is_null($language) ? '' : $language, 'string');
         if (empty($language)) {
             $language = self::DEFAULT_LANG;
         }
@@ -95,7 +98,8 @@ class Translate {
      * @param string $code
      */
     public function isValidLanguage($code) {
-        return file_exists(MONGOUI_ROOT . '/lang/' . $code . '.xml');
+        $file = MONGOUI_ROOT . '/lang/' . $code . '.xml';
+        return is_readable($file);
     }
 
     private function loadLanguageFromXML($language) {
