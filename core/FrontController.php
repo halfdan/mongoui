@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) 2010  Fabian Becker
  *
@@ -15,6 +16,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace MongoUI\Core;
 
 class FrontController {
@@ -33,10 +35,43 @@ class FrontController {
     }
 
     public function init() {
+        // Initializing the language
         $translation = Translate::getInstance();
 
-
-        
+        // If requested with ?lang=<lang> we load the language.
+        $lang = $translation->getLanguageToLoad();
+        $translation->loadLanguage($lang);
     }
 
+    public function dispatch($module = null, $action = null, $parameters = null) {
+        if (is_null($module)) {
+            $defaultModule = 'Login';
+            $module = Common::getRequestVar('module', $defaultModule, 'string');
+        }
+
+        if (is_null($action)) {
+            $action = Common::getRequestVar('action', false);
+        }
+
+        if (is_null($parameters)) {
+            $parameters = array();
+        }
+
+        $class = "\\MongoUI\\Modules\\" . $module;
+        if(class_exists($class, true)) {
+            $controller = new $class();
+        } else {
+            throw new \Exception("Module controller $module not found!");
+        }
+
+        if ($action === false) {
+            $action = $controller->getDefaultAction();
+        }
+
+        if (!is_callable(array($controller, $action))) {
+            throw new \Exception("Action $action not found in the module $module.");
+        }
+
+        return call_user_func_array(array($controller, $action), $parameters);
+    }
 }

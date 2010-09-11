@@ -17,6 +17,33 @@
  */
 namespace MongoUI\Core;
 
-class Controller {
+abstract class Controller {
+
+    public function __construct() {
+
+    }
+
+    /**
+     * Returns the name of the default method that will be called
+     * when visiting: index.php?module=<name> without an action.
+     *
+     * @return string
+     */
+    public function getDefaultAction() {
+        return 'index';
+    }
+
+
+    public function renderTemplate(\MongoUI\Core\Template $template, $fetch = false) {
+        $theme = \MongoUI\Core\Common::getCurrentTheme();
+        $className = end(explode("\\", \get_called_class()));
+        $templatePath = MONGOUI_ROOT . '/themes/' . $theme . '/' . $className;
+        $template->setPath('template', $templatePath);
+
+        if($fetch)
+            return $template->fetch();
+        else
+            $template->display();
+    }
 
 }

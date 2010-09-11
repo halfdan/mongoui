@@ -87,7 +87,7 @@ class Translate {
         if ($this->isValidLanguage($language)) {
             return $language;
         } else {
-            throw new Exception("The language selected ('$language') is not a valid language file ");
+            throw new \Exception("The language selected ('$language') is not a valid language file ");
         }
     }
 
