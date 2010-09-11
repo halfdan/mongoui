@@ -29,7 +29,7 @@
                             <input type="password" class="textbox340" name="txtPassword" id="txtPassword" value=""/>
                         </div>
                         <div class="submit clearfix">
-                            <input type="image" src="themes/default/images/login_button.jpg" alt="Login" name="btnLogin" id="btnLogin"/>
+                            <input type="submit" name="btnLogin" id="btnLogin" value="<?php echo translate("Login.Login"); ?>" />
                         </div>
                         <p class="lostpassword">
                             <a href="#" class="selectdb"><?php echo translate("Login.SelectDatabase"); ?></a>

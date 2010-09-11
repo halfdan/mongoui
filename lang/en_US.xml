@@ -14,6 +14,7 @@
     <label index="General.Delete">Delete</label>
     <label index="General.Create">Create</label>
     <label index="General.Version">Version</label>
+    <label index="Login.Login">Login</label>
     <label index="Login.Username">Username</label>
     <label index="Login.Password">Password</label>
     <label index="Login.SelectDatabase">Select Database</label>
