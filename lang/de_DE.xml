@@ -10,6 +10,12 @@
     <label index="General.Date">Datum</label>
     <label index="General.Save">Speichern</label>
     <label index="General.Edit">Bearbeiten</label>
+    <label index="General.Delete">Löschen</label>
     <label index="General.Create">Erstellen</label>
     <label index="General.Version">Version</label>
+    <label index="Login.Username">Benutzername</label>
+    <label index="Login.Password">Passwort</label>
+    <label index="Login.SelectDatabase">Datenbank wählen</label>
+    <label index="Login.Or">oder</label>
+    <label index="Login.NeedHelp">brauchen Sie Hilfe</label>
 </language>
