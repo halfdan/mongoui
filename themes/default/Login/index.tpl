@@ -4,12 +4,12 @@
         <title id="pageTitle">Administration Login</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
         <meta http-equiv="Cache-Control" content="no-cache"/>
-        <link rel="stylesheet" href="themes/default/global.css" type="text/css" media="screen"/>
-        <link rel="stylesheet" href="themes/default/master.css" type="text/css" media="screen"/>
+        <script src="libs/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="themes/default/Login/style.css" type="text/css" media="screen"/>
     </head>
     <body>
         <form name="login" method="post" action="" id="loginform">
-            <div id="errorMsg">
+            <div id="errorMessage">
             </div>
 
             <div id="login">
@@ -31,7 +31,7 @@
                         <div class="submit clearfix">
                             <input type="submit" name="btnLogin" id="btnLogin" value="<?php echo translate("Login.Login"); ?>" />
                         </div>
-                        <p class="lostpassword">
+                        <p class="info">
                             <a href="#" class="selectdb"><?php echo translate("Login.SelectDatabase"); ?></a>
                             <?php echo translate("Login.Or"); ?>
                             <a href="http://mongoui.org/docs/" target="_blank"><?php echo translate("Login.NeedHelp"); ?>?</a>
