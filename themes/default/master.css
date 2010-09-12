@@ -1,99 +1,101 @@
 div.sysok,div.sysalert,div.syserror
 {
-	font-size: 11px;
-	margin: 0 0 18px 0;
-	padding: 18px 18px 18px 54px;
+    font-size: 11px;
+    margin: 0 0 18px 0;
+    padding: 18px 18px 18px 54px;
 }
 div.sysok
 {
-	background: #D7F3BD url(../CatalystImages/a16/ok.png) no-repeat 18px 18px;
-	border: 1px solid #9ABF85;
+    background: #D7F3BD url(../CatalystImages/a16/ok.png) no-repeat 18px 18px;
+    border: 1px solid #9ABF85;
 }
 div.sysalert
 {
-	background: #FDD8A6 url(../CatalystImages/a16/alert.png) no-repeat 18px 18px;
-	border: 1px solid #E0A687;
+    background: #FDD8A6 url(../CatalystImages/a16/alert.png) no-repeat 18px 18px;
+    border: 1px solid #E0A687;
 }
 div.syserror
 {
-	background: #FFD3D4 url(../CatalystImages/a16/delete.png) no-repeat 18px 18px;
-	border: 1px solid #E59D9E;
+    background: #FFD3D4 url(../CatalystImages/a16/delete.png) no-repeat 18px 18px;
+    border: 1px solid #E59D9E;
 }
 body
 {
-	background: #D2E2CD;
+    background: #D2E2CD;
 }
 div#login
 {
-	background: #fff;
-	margin: 100px auto 0;
-	-moz-border-radius: 6px;
-	-moz-box-shadow: 1px 0 #aaa, 1px 1px #000;
-	width: 540px;
+    background: #fff;
+    margin: 100px auto 0;
+    -moz-border-radius: 6px;
+    -moz-box-shadow: 1px 0 #aaa, 1px 1px #000;
+    -webkit-border-radius: 6px;
+    -webkit-box-shadow: 1px 0 #aaa, 1px 1px #000;
+    width: 540px;
 }
 
 div#login div#panelLogin div,div#login div#panelResetPass div,div#login div#panelChangePass div
 {
-	margin: 0 auto;
-	padding-bottom: 18px;
-	width: 456px;
+    margin: 0 auto;
+    padding-bottom: 18px;
+    width: 456px;
 }
 div#login div#branding
 {
-	padding-top: 20px;
-	text-align:center;
+    padding-top: 20px;
+    text-align:center;
 }
 div#login div#branding img
 {
-	display: block;
-	margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 
 }
 div#login label
 {
-	color: #888;
-	display: block;
-	font-size: 12px;
+    color: #888;
+    display: block;
+    font-size: 12px;
 }
 div#login span.checkBoxListStyle label
 {
-	display: inline;
+    display: inline;
 }
 div#login input#txtLogin,div#login input#txtPassword,div#login input#txtEmailAddressResetPass,div#login input.textbox340
 {
-	background: #fafafa;
-	border: 1px solid #eee;
-	font-size: 18px;
-	line-height: 20px;
-	margin: 0;
-	padding: 3px;
-	width: 440px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0;
+    padding: 3px;
+    width: 440px;
 }
 * html div#login input#txtLogin,* html div#login input#txtPassword,* html div#login input#txtEmailAddressResetPass,* html div#login input.textbox340
 {
-	background: #eee;
-	border: 1px solid #ddd;
-	font-size: 18px;
-	line-height: 20px;
-	margin: 0;
-	padding: 3px;
-	width: 440px;
+    background: #eee;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0;
+    padding: 3px;
+    width: 440px;
 }
 div#login input#txtLogin:focus,div#login input#txtPassword:focus,div#login input.textbox340:focus
 {
-	background: #fcfcfc;
-	border: 1px solid #ccc;
+    background: #fcfcfc;
+    border: 1px solid #ccc;
 }
 div#login div.submit p
 {
-	float: left;
-	margin: 0;
+    float: left;
+    margin: 0;
 }
 div#login input#btnLogin,div#login input#btnRetrieve,div#login input#btnUpdate
 {
-	float: right;
-	margin-bottom: 10px;
-	margin-right: 8px;
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 8px;
 }
 
 div#login input#btnLogin {
@@ -106,29 +108,29 @@ div#login input#btnLogin {
 
 div#login a:link,div#login a:visited
 {
-	color: #aaa;
+    color: #aaa;
 }
 div#login a:hover,div#login a:active
 {
-	color: #fff;
+    color: #fff;
 }
 p.lostpassword
 {
-	left: 45px;
-	margin: 0;
-	position: relative;
-	top: -50px;
-	width: 260px;
+    left: 45px;
+    margin: 0;
+    position: relative;
+    top: -50px;
+    width: 260px;
 }
 div#login p.lostpassword a
 {
-	color: #0066bc!important;
+    color: #0066bc!important;
 }
 body div#errorMsg
 {
-	color: #000;
-	margin: 30px auto -85px;
-	padding: 18px 18px 18px 54px;
-	width: 450px;
+    color: #000;
+    margin: 30px auto -85px;
+    padding: 18px 18px 18px 54px;
+    width: 450px;
 }
 
