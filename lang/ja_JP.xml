@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="ja_JP">
+    <label index="General.Language.Locale">ja_JP.UTF-8</label>
+    <label index="General.Language.Name">Japanese</label>
+    <label index="General.Language.Translator">MongoUI</label>
+    <label index="General.Language.OriginalName">日本語</label>
+    <label index="General.Yes">はい</label>
+    <label index="General.No">いいえ</label>
+    <label index="General.Save">保存</label>
+    <label index="General.Edit">編集</label>
+    <label index="General.Delete">削除</label>
+    <label index="General.Create">Create</label>
+    <label index="General.Version">バージョン</label>
+    <label index="Login.Login">ログイン</label>
+    <label index="Login.Username">ユーザ名</label>
+    <label index="Login.Password">パスワード</label>
+</language>
