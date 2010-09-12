@@ -92,6 +92,28 @@ class Translate {
     }
 
     /**
+     * Returns a list of all available languages.
+     *
+     * @staticvar string $languages Stores the array of languages.
+     * @return array [Locale,Name] pairs.
+     */
+    public function getAvailableLanguages() {
+        static $languages = null;
+        if(!is_null($languages)) {
+            return $languages;
+        }
+
+        foreach(glob(MONGOUI_ROOT.'/lang/*.xml') as $file) {
+            $data = new \SimpleXMLElement($file, NULL, TRUE);
+            $name = $data->xpath("//label[@index='General.Language.OriginalName']");
+            $code = $data->xpath("/language/@code");
+            $languages[] = array((string)$code[0], (string)$name[0]);
+        }
+
+        return $languages;
+    }
+
+    /**
      * Returns whether a language exists.
      *
      * @return boolean if the language exists or not
