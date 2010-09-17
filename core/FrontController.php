@@ -34,7 +34,9 @@ class FrontController {
         return self::$instance;
     }
 
-    public function init() {
+    public function init() {        
+        Registry::set('config', new Config());
+
         // Initializing the language
         $translation = Translate::getInstance();
 
@@ -44,6 +46,9 @@ class FrontController {
     }
 
     public function dispatch($module = null, $action = null, $parameters = null) {
+
+        $this->authenticate();
+
         if (is_null($module)) {
             $defaultModule = 'Login';
             $module = Common::getRequestVar('module', $defaultModule, 'string');
@@ -73,5 +78,9 @@ class FrontController {
         }
 
         return call_user_func_array(array($controller, $action), $parameters);
+    }
+
+    private function authenticate() {
+
     }
 }

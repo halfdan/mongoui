@@ -19,41 +19,33 @@
 
 namespace MongoUI\Core;
 
-class Config implements \Countable {
-
+class ConfigArray implements \Countable {
+    
     protected $configArray = array();
     protected $configOriginal = array();
-    const DEFAULT_CONFIG = "config.ini.php";
+    
+    public function __construct(array $array) {
+        $this->configOriginal = $array;
 
-    public function __construct($file = self::DEFAULT_CONFIG) {
-        $this->loadConfig($file);
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                $this->configArray[$key] = new self($value);
+            } else {
+                $this->configArray[$key] = $value;
+            }
+        }
     }
 
     public function __get($name) {
-        return $this->configArray->$name;
-    }
-
-    public function loadConfig($path) {
-        if (!is_readable($path)) {
-            throw new \Exception("Can't load config from {$path}.");
+        if(array_key_exists($name, $this->configArray)) {
+            return $this->configArray[$name];
         }
-
-        // Load ini file and process sections
-        $ini = parse_ini_file($path, TRUE);
-        if ($ini == FALSE) {
-            throw new \Exception("Error in config file: {$path}.");
-        }
-
-        // We merge the new config into a possibly loaded one
-        $this->configOriginal = array_merge($this->configArray, $ini);
-
-        $this->configArray = new ConfigArray($ini);
+        return null;
     }
 
     public function count() {
         return count($this->configArray);
     }
-
 }
 
 ?>

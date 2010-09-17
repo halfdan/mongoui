@@ -120,7 +120,7 @@ class Common {
      * @return string The name of the current theme
      */
     public static function getCurrentTheme() {
-        return "default";
+        return Registry::get('config')->General->default_theme;
     }
 
 }

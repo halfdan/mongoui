@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) 2010  Fabian Becker
  *
@@ -15,22 +16,34 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace MongoUI\Modules;
 
-class Login extends \MongoUI\Core\Controller {
+namespace MongoUI\Core;
 
-    public function index() {
-        $template = new \MongoUI\Core\Template();
-        $template->setTemplate('index.tpl');
-        $this->renderTemplate($template);
+abstract class Registry {
+
+    private static $registry = array();
+
+    public static function set($key, $value) {
+        if(!self::has($key)) {
+            self::$registry[$key] = $value;
+        } else {
+            throw new \Exception('Registry key `$key` is already set.');
+        }
     }
 
-    public function auth() {
-        $result = array(
-            "success" => true,
-            "message" => "Wrong username or password"
-        );
-        echo json_encode($result);
+    public static function get($key) {
+        if(self::has($key)) {
+            return self::$registry[$key];
+        }
+        return null;
+    }
+
+    public static function has($key) {
+        if(isset(self::$registry[$key])) {
+            return true;
+        }
+        return false;
     }
 }
+
 ?>
