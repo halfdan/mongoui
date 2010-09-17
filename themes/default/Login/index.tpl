@@ -41,8 +41,29 @@
         </form>
         </div>
         <script language="javascript" type="text/javascript">
-            if (document.getElementById('txtLogin'))
-                document.getElementById('txtLogin').focus();
+            $(document).ready(function() {
+                if($('#txtLogin'))
+                    $('#txtLogin').focus();
+                
+                $("#loginform").submit(doLogin);
+            });
+
+            function doLogin() {
+                var formValues = $(this).serialize();
+                
+                $.post("?module=login&action=auth", formValues, function(data) {
+                    $("#errorMessage").html(data.message);
+
+                    if(data.success == true) {
+                        $("#errorMessage").attr("class", "sysok");
+                    }
+                    else {
+                        $("#errorMessage").attr("class", "sysalert");
+                    }
+                },'json');
+
+                return false;
+            }
         </script>
     </body>
 </html>
