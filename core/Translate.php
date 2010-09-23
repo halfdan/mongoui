@@ -75,15 +75,8 @@ class Translate {
      * @throws exception if the language set is not a valid filename
      */
     public function getLanguageToLoad() {
-        static $language = null;
-        if (!is_null($language)) {
-            return $language;
-        }
+        $language = \MongoUI\Core\Common::getRequestVar('lang', self::DEFAULT_LANG, 'string');
 
-        $language = \MongoUI\Core\Common::getRequestVar('lang', is_null($language) ? '' : $language, 'string');
-        if (empty($language)) {
-            $language = self::DEFAULT_LANG;
-        }
         if ($this->isValidLanguage($language)) {
             return $language;
         } else {
