@@ -6,3 +6,5 @@ MongoUI is a Webinterface for MongoDB written in PHP. It requires the Mongo exte
 Installation
 ------------
 To be filled.
+
+# Inactive!
